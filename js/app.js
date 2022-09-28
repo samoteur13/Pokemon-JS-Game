@@ -1,5 +1,9 @@
-import { Pokemons_info, offset, limit } from '../modules/module.js';
+import { Pokemons_info, offset, limit, } from '../modules/module.js';
 import { Hero } from '../modules/personnage.js';
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+let combat = 0
 
 
 let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}=&offset=` + offset * limit
@@ -45,6 +49,10 @@ function checkKey(e) {
     if (player.positionX > 0) {
       player.positionX -= 1
       document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
+      combat = getRandomInt(3)
+      if(combat == 2){
+        console.log("combat")
+      }
     }
   }
   else if (e.keyCode == '40') {
@@ -53,6 +61,10 @@ function checkKey(e) {
       player.positionX += 1
       document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
     }
+    combat = getRandomInt(3)
+    if(combat == 2){
+      console.log("combat")
+    }
   }
   else if (e.keyCode == '37') {
     // left arrow
@@ -60,12 +72,20 @@ function checkKey(e) {
       player.positionY -= 1
       document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
     }
+    combat = getRandomInt(3)
+    if(combat == 2){
+      console.log("combat")
+    }
   }
   else if (e.keyCode == '39') {
     // right arrow
     if (player.positionY < 4) {
       player.positionY += 1
       document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
+    }
+    combat = getRandomInt(3)
+    if(combat == 2){
+      console.log("combat")
     }
   }
 
@@ -101,4 +121,6 @@ if (is_pokedex) {
 }
 
 
+
+Pokemons_info.getEnnemie()
 

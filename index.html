@@ -32,7 +32,6 @@
 
     <section id="pokemon" class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-around"></section>
     <section id="carte" class="is-hidden is-flex is-justify-content-center">
-
       <table id="round">
         <tr>
           <td id="C00"></td>
@@ -70,9 +69,18 @@
           <td id="C44"></td>
         </tr>
       </table>
-      <img id="first_img" src="/css/image/pngegg (3).png" width="" />
     </article>
 
+    </section>
+    <section id="combat is-flex is-flex-direction-column columns is-hidden">
+      <div class="is-flex is-justify-content-flex-end column">
+        <img id="pokemon_ennemie_sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="pokemon attaquant">
+        <p id="pokemon_ennemie_stats">state pokemon</p>
+      </div>
+      <div class="is-flex column">
+        <p id="pokemon_player_stats">state pokemon</p>
+        <img id="pokemon_player_sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png" alt="pokemon defend">
+      </div>
     </section>
 
     <template class="columns " id="productrow">
@@ -92,7 +100,9 @@
                 </div>
                 <div class="media-content">
                   <p id="pokemon_name" class="title is-4 ">John Smith</p>
-                  <p id="pokemon_type">type</p>
+                  <div id="pokemon_type">
+
+                  </div>
                 </div>
               </div>
             </div>
