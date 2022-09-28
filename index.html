@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <header class="hero is-danger">
+      <section class="section is-flex-direction-row is-align-self-auto">
+        <div class="columns hero-body">
+          <div class="column is-flex is-flex-direction-column is-align-items-center">
+            <figure class="image is-128x128">
+              <img id="first_img" class="is-rounded" src="/css/image/logo.png" />
+            </figure>
+            <h1 class="title">Pokemon API</h1>
+          </div>
+          <div class="column is-flex is-flex-direction-column is-align-items-center">
+            <img id="first_img" src="/css/image/pngegg (3).png" width="" />
+            <p>PLAYER: Samy</p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+
+
+    <section id="pokemon" class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-around"></section>
+
+    <template class="columns " id="productrow">
+
+        <div  class="card column is-2 m-1">
+            <div class="card-image">
+              <figure class="image is-128x128">
+                <img id="pokemon_img" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img id="pokemon_img_back" src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p id="pokemon_name" class="title is-4">John Smith</p>
+                </div>
+              </div>
+            </div>
+            <p id="type"></p>
+          </div>
+        
+    </template>
+
+
+    
+  </body>
+  <script type="module" src="/js/app.js"></script>
+  <script type="module" src="/modules/template.js"></script>
+</html>
