@@ -1,4 +1,5 @@
 import { Pokemon } from './template.js'
+import {random}  from '../customDependences/random.js';
 
 export let offset = 0
 
@@ -29,10 +30,7 @@ export class Pokemons_info {
     }
 
     static async getEnnemie() {
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * max);
-          }
-        let url = ('https://pokeapi.co/api/v2/pokemon/'+getRandomInt(151) )
+        let url = ('https://pokeapi.co/api/v2/pokemon/'+random(151) )
 
         fetch(url)
             .then(response => response.json())
