@@ -16,7 +16,6 @@ export class Pokemon {
         pokemon_types.innerText = pkmn.types[0].type.name
         let pokemon_container = document.getElementById('pokemon')
         pokemon_container.appendChild(templateClone)
-
     }
 
 }

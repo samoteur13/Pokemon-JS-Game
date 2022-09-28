@@ -17,7 +17,6 @@ export class Pokemons_info {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-
                 for (let i = 0; i < data.results.length; i++) {
                     let poke_info = fetch(data.results[i].url).then(response => response.json().then(info => {
                         Pokemon.drawPKmn(info)
