@@ -21,10 +21,9 @@ export class Pokemons_info {
                 for (let i = 0; i < data.results.length; i++) {
                     let poke_info = fetch(data.results[i].url).then(response => response.json().then(info => {
                         Pokemon.drawPKmn(info)
-                        // console.log(info.types)
+                        // console.log(info.types[0].type.name)
                     }))
                 }
-                console.log(offset, offset +1)
                 offset += 1
             })
 
