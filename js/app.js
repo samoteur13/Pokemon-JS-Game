@@ -4,7 +4,7 @@ import { Hero } from '../modules/personnage.js';
 
 let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}=&offset=` + offset * limit
 
-let player = new Hero('samy', 0, 0, '<img src="/css/image/Overworld_Topdresseur_♂_NB.png" width="100%">')
+let player = new Hero('samy', 0, 0, '<img id="playerSprite" src="/css/image/Overworld_Topdresseur_♂_NB.png" width="100%">')
 document.getElementById('C' + player.positionX + player.positionY).innerHTML = player.image
 
 
@@ -33,52 +33,39 @@ display_carte.onclick = function () {
 }
 
 
-// document.addEventListener('keydown', function(event){
-//   if (player.positionX < 4) {
-//     document.getElementById('C' + player.positionX + player.positionY).innerHTML = ""
-//     player.positionX += 1
-//     document.getElementById('C' + player.positionX + player.positionY).innerHTML = player.image
-// }
-// })
-
 
 document.onkeydown = checkKey;
 
 function checkKey(e) {
-
+  let lePlayer = document.getElementById('playerSprite')
   e = e || window.event;
 
   if (e.keyCode == '38') {
     // up arrow
     if (player.positionX > 0) {
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = ""
       player.positionX -= 1
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = player.image
+      document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
     }
   }
   else if (e.keyCode == '40') {
     // down arrow
     if (player.positionX < 4) {
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = ""
       player.positionX += 1
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = player.image
+      document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
     }
   }
   else if (e.keyCode == '37') {
     // left arrow
-    if (player.positionX < 0) {
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = ""
+    if (player.positionY > 0) {
       player.positionY -= 1
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = player.image
+      document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
     }
-    console.log("ok")
   }
   else if (e.keyCode == '39') {
     // right arrow
-    if (player.positionX < 4) {
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = ""
+    if (player.positionY < 4) {
       player.positionY += 1
-      document.getElementById('C' + player.positionX + player.positionY).innerHTML = player.image
+      document.getElementById('C' + player.positionX + player.positionY).appendChild(playerSprite)
     }
   }
 
