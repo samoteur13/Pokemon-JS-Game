@@ -1,5 +1,6 @@
-import { Pokemons_info, offset, limit, } from '../modules/module.js';
+import { Pokemons_info, offset, limit } from '../modules/module.js';
 import { Hero } from '../modules/personnage.js';
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -8,7 +9,7 @@ let combat = 0
 
 let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}=&offset=` + offset * limit
 
-let player = new Hero('samy', 0, 0, '<img id="playerSprite" src="/css/image/Overworld_Topdresseur_♂_NB.png" width="100%">')
+let player = new Hero('samy', 0, 0, '<img id="playerSprite" src="/css/image/sprites_player/Overworld_Topdresseur_♂_NB.png" width="100%">')
 document.getElementById('C' + player.positionX + player.positionY).innerHTML = player.image
 
 
@@ -19,8 +20,6 @@ let is_pokedex = true
 let pokemons = document.getElementById('pokemon');
 let carte = document.getElementById('carte');
 
-//déplacement du personnage 
-let deplacements = document.getElementById('deplacement')
 
 //ouvre le pokedex
 display_pokedex.onclick = function () {
